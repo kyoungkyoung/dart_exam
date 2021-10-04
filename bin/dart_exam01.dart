@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Hero {
   String name;
   int hp;
@@ -9,13 +11,13 @@ class Hero {
   }
 }
 
-const int maxHp = 50;
-const int maxMp = 10;
+// const int maxHp = 50;
+// const int maxMp = 10;
 
 class Cleric extends Hero{
   // 상수 필드로 선언
-  // static final int maxHp = 50;
-  // static final int maxMp = 10;
+  static final int maxHp = 50;
+  static final int maxMp = 10;
 
   int mp = maxMp;
 
@@ -26,6 +28,20 @@ class Cleric extends Hero{
       mp -= 5;
       hp = maxHp;
     }
+  }
+
+  int pray(int sec){
+    int beforeMp = mp;
+    int recoverMp = sec + Random().nextInt(3);
+
+    mp += recoverMp;
+
+    if (mp > maxMp) {
+      mp = maxMp;
+    }
+    //mp = min(mp, maxMp);
+
+    return mp = beforeMp;
   }
 }
 

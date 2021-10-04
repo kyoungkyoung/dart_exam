@@ -16,12 +16,14 @@ class Hero {
 
 class Cleric extends Hero{
   // 상수 필드로 선언
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  // static final int maxHp = 50;
+  // static final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
   int mp = maxMp;
 
-  Cleric(String name, int hp) : super(name, hp);
+  Cleric(String name, {int hp = maxHp, this.mp = maxMp}) : super(name, hp);
 
   selfAid(){
     if(mp >= 5){

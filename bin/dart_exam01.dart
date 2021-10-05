@@ -56,7 +56,7 @@ void main(List<String> arguments){
   print(hong.hashCode);
   print(lim.hashCode);
 
-  final cleric = Cleric('우서', 300);
+  final cleric = Cleric('우서', hp: 300);
 
 }
 
